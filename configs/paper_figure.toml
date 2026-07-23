@@ -1,0 +1,68 @@
+[experiment]
+name = "paper-figure-reconstruction"
+seed = 2022
+split_policy = "paper_faithful"
+
+[data]
+channels = 28
+high_resolution_size = 32
+low_resolution_size = 8
+
+[preprocessing]
+normalization = "channel_minmax"
+window_size = 32
+border_policy = "error"
+
+[split]
+validation_fraction = 0.2
+test_fraction = 0.0
+
+[downscale]
+strategy = "legacy_diagonal"
+block_size = 4
+samples_per_block = 2
+
+[augmentation]
+samples_per_site = 200
+
+[generator]
+features = 64
+residual_blocks = 16
+scale_factor = 4
+
+[discriminator]
+base_features = 64
+
+[classifier]
+filters = [64, 128, 256]
+# Figure 6 depicts 1024 followed by 512; the prose describes the reverse order.
+hidden_dims = [1024, 512]
+dropout = 0.5
+
+[training.gan]
+epochs = 2000
+batch_size = 5
+learning_rate = 0.0002
+beta1 = 0.5
+beta2 = 0.999
+
+[training.classifier]
+epochs = 1200
+batch_size = 128
+learning_rate = 0.00001
+beta1 = 0.9
+beta2 = 0.999
+
+[loss.gan]
+reconstruction = "l1"
+reconstruction_weight = 1.0
+adversarial_weight = 0.001
+
+[evaluation]
+classification_threshold = 0.5
+psnr_data_range = 2.0
+
+[inference]
+window_size = 32
+batch_size = 256
+border_policy = "reflect"

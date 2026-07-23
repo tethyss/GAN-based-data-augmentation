@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "GAN-Augmented Mineral Prospectivity Mapping"
+type: software
+authors:
+  - family-names: "Li"
+    given-names: "Tong"
+repository-code: "https://github.com/tethyss/GAN-based-data-augmentation"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Mapping prospectivity for regolith-hosted REE deposits via convolutional neural network with generative adversarial network augmented data"
+  authors:
+    - family-names: "Li"
+      given-names: "Tong"
+    - family-names: "Zuo"
+      given-names: "Renguang"
+    - family-names: "Zhao"
+      given-names: "Xinfu"
+    - family-names: "Zhao"
+      given-names: "Kuidong"
+  journal: "Ore Geology Reviews"
+  volume: "142"
+  year: 2022
+  doi: "10.1016/j.oregeorev.2022.104693"
