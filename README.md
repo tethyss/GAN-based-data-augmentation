@@ -46,20 +46,6 @@ gaps that must be resolved before model results can be claimed.
 - Deterministic downscaling, synthetic fixtures, and PyTorch model components are under
   active reconstruction.
 
-## Reproducibility principles
-
-1. No confidential observations, deposit coordinates, raster layers, or trained weights
-   are committed.
-2. Public tests use generated synthetic fixtures only.
-3. Every experiment will be configuration-driven and seed-controlled.
-4. Paper-faithful results and leakage-safe validation results will be reported separately.
-5. Claims will be linked to machine-readable metrics and environment metadata.
-
-See [the reproducibility audit](docs/reproducibility_audit.md) and
-[the data contract](docs/data_contract.md) for the current specification. The complete
-stage graph and confidentiality boundary are documented in
-[the workflow guide](docs/workflow.md).
-
 ## Repository layout
 
 ```text
